@@ -54,6 +54,11 @@ The select box will be hidden and resized so that its dimensions match those of
 Options
 -------
 
+Options can be passed either in an object when you initialize the plugin, or by
+setting prefixed data-* attributes on the select box you're replacing. (For
+example, if you want to set the option "widgetTemplate", you would use the
+attribute "data-icbiaselect-widgetTemplate".)
+
 ### widgetTemplate
 
 Used if you aren't happy with the default widget markup icbiaselect produces.
