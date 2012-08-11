@@ -48,7 +48,9 @@ The new HTML will look like this:
 ```
 
 The select box will be hidden and resized so that its dimensions match those of
-"icbiaselect-widget". Use CSS to style the elements however you want.
+"icbiaselect-widget". Use CSS to style the elements however you want. When the
+select box has focus, a class of "focus" will be added to the container (the
+element with the "icbiaselect" class).
 
 
 Options

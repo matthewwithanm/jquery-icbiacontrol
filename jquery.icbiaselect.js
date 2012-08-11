@@ -10,10 +10,21 @@
 	var DATA_ATTR_PREFIX = 'data-icbiaselect-';
 
 	IcbiaSelect.prototype.initialize = function () {
-		this.$el.change($.proxy(this.selectHandler, this));
+		this.$el
+			.change($.proxy(this.selectHandler, this))
+			.focus($.proxy(this.focusHandler, this))
+			.blur($.proxy(this.blurHandler, this));
 		this.wrap();
 		this.refreshDimensions();
 		this.updateDisplayValue();
+	};
+
+	IcbiaSelect.prototype.blurHandler = function (event) {
+		this.wrapper.removeClass('focus');
+	};
+
+	IcbiaSelect.prototype.focusHandler = function (event) {
+		this.wrapper.addClass('focus');
 	};
 
 	IcbiaSelect.prototype.selectHandler = function (event) {
