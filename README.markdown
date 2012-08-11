@@ -66,7 +66,8 @@ Can be either a function that returns a jQuery object or a selector that will be
 used to find a template in the document. Whichever you use, make sure it
 contains an element with the class "icbiaselect-display" if you want it to
 reflect the state of your select box. The class "icbiaselect-widget" will be
-automatically added to your element.
+automatically added to your element, and it (along with the original select box)
+will be nested in a container with the class "icbiaselect".
 
 #### Example
 
