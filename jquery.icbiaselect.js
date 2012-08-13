@@ -32,8 +32,8 @@
 	};
 
 	IcbiaSelect.prototype.updateDisplayValue = function () {
-		var label = this.$el.find('option:selected').text();
-		this.widget.find('.icbiaselect-display').text(label);
+		var label = this.$el.find('option:selected').html();
+		this.widget.find('.icbiaselect-display').html(label || '&nbsp;');
 		this.updateHitArea();
 	};
 
