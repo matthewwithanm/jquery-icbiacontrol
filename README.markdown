@@ -34,7 +34,9 @@ The new HTML will look like this:
 ```html
 <span class="icbiaselect">
 	<span class="icbiaselect-widget">
-		<span class="icbiaselect-display"></span>
+		<span class="icbiaselect-display-wrapper">
+			<span class="icbiaselect-display"></span>
+		</span>
 		<span class="icbiaselect-arrow"><i></i></span>
 	</span>
 	<select id="my-select" name="numbers">
