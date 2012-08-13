@@ -15,7 +15,7 @@
 			.focus($.proxy(this.focusHandler, this))
 			.blur($.proxy(this.blurHandler, this));
 		this.wrap();
-		this.refreshDimensions();
+		this.updateHitArea();
 		this.updateDisplayValue();
 	};
 
@@ -36,7 +36,7 @@
 		this.widget.find('.icbiaselect-display').text(label);
 	};
 
-	IcbiaSelect.prototype.refreshDimensions = function () {
+	IcbiaSelect.prototype.updateHitArea = function () {
 		this.$el
 			.css({
 				width: this.widget.width(),
