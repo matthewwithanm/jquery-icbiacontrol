@@ -34,6 +34,7 @@
 	IcbiaSelect.prototype.updateDisplayValue = function () {
 		var label = this.$el.find('option:selected').text();
 		this.widget.find('.icbiaselect-display').text(label);
+		this.updateHitArea();
 	};
 
 	IcbiaSelect.prototype.updateHitArea = function () {
