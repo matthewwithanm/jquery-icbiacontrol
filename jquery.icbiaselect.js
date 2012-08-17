@@ -105,7 +105,8 @@
 
 	$.extend($.fn, {
 		icbiaSelect: function (optionsOrMethod) {
-			var returnValue = this;
+			var returnValue = this,
+			    args = arguments;
 			this.each(function (i, el) {
 				var $el = $(el),
 				    plugin = $el.data('icbiaSelect'),
@@ -127,7 +128,7 @@
 						$.error('Method "' + method + '" does not exist on jQuery.icbiaSelect');
 					} else {
 						// NOTE: If you call a method that returns a value, you will only get the result from the last item in the collection.
-						returnValue = plugin[method].apply(plugin, Array.prototype.slice.call(arguments, 1));
+						returnValue = plugin[method].apply(plugin, Array.prototype.slice.call(args, 1));
 					}
 				}
 			});
