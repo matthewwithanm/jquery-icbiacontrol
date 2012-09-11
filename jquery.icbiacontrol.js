@@ -61,6 +61,7 @@
 			    widget = typeof wt === 'function' ? wt() : $($(wt).html());
 
 			return widget
+				.removeAttr(this.optionAttributePrefix + 'widgetTemplate')
 				.addClass('icbiacontrol-widget')
 				.addClass('icbia' + this.controlName + '-widget');
 		},
