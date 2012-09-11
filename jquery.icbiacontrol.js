@@ -104,7 +104,7 @@
 	controlMap = {
 		'select': IcbiaControl.extend({
 			controlName: 'select',
-			defaultOptions: $.extend(IcbiaControl.prototype.defaultOptions, {
+			defaultOptions: $.extend({}, IcbiaControl.prototype.defaultOptions, {
 				widgetTemplate: function () {
 					return $(' ' +
 							'<span>                                                        ' +
