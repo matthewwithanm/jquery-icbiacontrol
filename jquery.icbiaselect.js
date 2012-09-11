@@ -66,8 +66,7 @@
 						'    <span class="icbiaselect-arrow"><i></i></span>                ' +
 						'</span>                                                           '
 					);
-			},
-			a: 3
+			}
 		},
 
 		createWidget: function () {
