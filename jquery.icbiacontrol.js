@@ -68,7 +68,6 @@
 
 		wrap: function () {
 			if (!this.wrapper) {
-				var parent = this.$el.parent();
 				this.widget = this.createWidget();
 				this.wrapper = $('<span class="icbiacontrol"></span>')
 					.addClass('icbia' + this.controlName)
@@ -77,6 +76,7 @@
 						display: 'inline-block'
 					})
 					.append(this.widget)
+					.insertBefore(this.$el)
 					.append(
 						this.$el.css({
 							position: 'absolute',
@@ -85,8 +85,7 @@
 							left: 0,
 							opacity: 0
 						})
-					)
-					.appendTo(parent);
+					);
 			}
 		}
 	};
