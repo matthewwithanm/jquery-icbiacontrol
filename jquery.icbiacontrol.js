@@ -126,12 +126,7 @@
 			controlName: 'checkbox',
 			defaultOptions: $.extend({}, IcbiaControl.prototype.defaultOptions, {
 				widgetTemplate: function () {
-					return $(' ' +
-						'<span>                                                          ' +
-						'    <span class="icbiacheckbox-checked-icon"></span>            ' +
-						'    <span class="icbiacheckbox-unchecked-icon"></span>            ' +
-						'</span>                                                         '
-						);
+					return $('<span><i></i></span>');
 				}
 			}),
 			updateWidget: function () {

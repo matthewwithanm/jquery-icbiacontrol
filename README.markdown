@@ -91,10 +91,7 @@ selected label.
 #### Default Widget Template
 
 ```html
-<span class="icbiacontrol-widget icbiacheckbox-widget">
-    <span class="icbiacheckbox-checked-icon"></span>
-    <span class="icbiacheckbox-unchecked-icon"></span>
-</span>
+<span class="icbiacontrol-widget icbiacheckbox-widget"><i></i></span>
 ```
 
 The classes "checked" and "unchecked" will be added to the container (the
