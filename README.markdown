@@ -1,58 +1,37 @@
-I Can't Believe It's a Select!
+I Can't Believe It's a Control!
 ==============================
 
-jquery-icbiaselect is a jQuery plugin that helps you style select boxes, but not
-really.
+jquery-icbiacontrol is a jQuery plugin that helps you style native browser
+controls, but not really.
 
-With icbiaselect, you style only the "display" part of the select box. When the
-widget is engaged, the normal browser dropdown is shown. iOS will show its
-little scrolly wheel thing; desktop browsers will show the native dropdown list.
-It works by positioning the original select box on top of your styled widget and
-setting its opacity to 0. So when you click on your widget, you're really
-clicking on the browser select box.
+It works by adding custom, styleable markup to the DOM right next to the
+original control, which is then made transparent and positioned on top of your
+custom widget. That way, when you interact with the styled widget, you're
+actually interacting with the native browser control.
+
+For example, when you use the plugin with a select box, you style only the
+"display" part. When the widget is engaged, the normal browser dropdown is
+shown. iOS will show its little scrolly wheel thing; desktop browsers will show
+the native dropdown list.
+
+Currently, jquery-icbiacontrol works with the following elements:
+
+* select
 
 
 Usage
 -----
 
-```html
-<select id="my-select" name="numbers">
-	<option value="0">0</option>
-	<option value="1">1</option>
-	<option value="2">2</option>
-	<option value="3">3</option>
-	<option value="4">4</option>
-</select>
-```
-
 ```javascript
-$('#my-select').icbiaSelect();
+$('select').icbiaControl();
 ```
 
-The new HTML will look like this:
-
-```html
-<span class="icbiaselect">
-	<span class="icbiaselect-widget">
-		<span class="icbiaselect-display-wrapper">
-			<span class="icbiaselect-display"></span>
-		</span>
-		<span class="icbiaselect-arrow"><i></i></span>
-	</span>
-	<select id="my-select" name="numbers">
-		<option value="0">0</option>
-		<option value="1">1</option>
-		<option value="2">2</option>
-		<option value="3">3</option>
-		<option value="4">4</option>
-	</select>
-</span>
-```
-
-The select box will be hidden and resized so that its dimensions match those of
-"icbiaselect-widget". Use CSS to style the elements however you want. When the
-select box has focus, a class of "focus" will be added to the container (the
-element with the "icbiaselect" class).
+The orignal control will be wrapped in a container with the classes
+"icbiacontrol" and "icbia<controlName>", along with a styleable widget (see
+below for the default widget markup for each supported control type). Use CSS to
+style the widget however you want. When the element has focus, a class of
+"focus" will be added to the container (the element with the "icbiacontrol"
+class).
 
 
 Options
@@ -61,17 +40,14 @@ Options
 Options can be passed either in an object when you initialize the plugin, or by
 setting prefixed data-* attributes on the select box you're replacing. (For
 example, if you want to set the option "widgetTemplate", you would use the
-attribute "data-icbiaselect-widgetTemplate".)
+attribute "data-icbiacontrol-widgetTemplate".)
 
 ### widgetTemplate
 
-Used if you aren't happy with the default widget markup icbiaselect produces.
+Used if you aren't happy with the default widget markup icbiacontrol produces.
 Can be either a function that returns a jQuery object or a selector that will be
-used to find a template in the document. Whichever you use, make sure it
-contains an element with the class "icbiaselect-display" if you want it to
-reflect the state of your select box. The class "icbiaselect-widget" will be
-automatically added to your element, and it (along with the original select box)
-will be nested in a container with the class "icbiaselect".
+used to find a template in the document. The classes "icbiacontrol-widget" and
+"icbia<controlName>-widget" will be automatically added to your element.
 
 #### Example
 
@@ -84,6 +60,27 @@ will be nested in a container with the class "icbiaselect".
 </script>
 
 <script type="text/javascript">
-	$('select').icbiaSelect({widgetTemplate: '#icbiaselect-template'});
+	$('select').icbiaControl({widgetTemplate: '#icbiaselect-template'});
 </script>
 ```
+
+
+Supported Controls
+------------------
+
+### select
+
+#### Default Widget Template
+
+```html
+<span class="icbiacontrol-widget icbiaselect-widget">
+    <span class="icbiaselect-display-wrapper">
+        <span class="icbiaselect-display"></span>
+    </span>
+    <span class="icbiaselect-arrow"><i></i></span>
+</span>
+```
+
+Note: If providing a custom widget template, make sure it includes an element
+with the class "icbiaselect-display". The plugin will use this to show the
+selected label.
