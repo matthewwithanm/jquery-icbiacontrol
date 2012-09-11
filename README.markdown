@@ -17,6 +17,7 @@ the native dropdown list.
 Currently, jquery-icbiacontrol works with the following elements:
 
 * select
+* input[type=checkbox]
 
 
 Usage
@@ -84,3 +85,18 @@ Supported Controls
 Note: If providing a custom widget template, make sure it includes an element
 with the class "icbiaselect-display". The plugin will use this to show the
 selected label.
+
+### checkbox
+
+#### Default Widget Template
+
+```html
+<span class="icbiacontrol-widget icbiacheckbox-widget">
+    <span class="icbiacheckbox-checked-icon"></span>
+    <span class="icbiacheckbox-unchecked-icon"></span>
+</span>
+```
+
+The classes "checked" and "unchecked" will be added to the container (the
+element with the "icbiacheckbox" class) to inidicate the current state of the
+control.

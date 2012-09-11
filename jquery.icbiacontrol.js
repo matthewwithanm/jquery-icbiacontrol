@@ -121,6 +121,26 @@
 				this.widget.find('.icbiaselect-display').html(label || '&nbsp;');
 				this.updateHitArea();
 			}
+		}),
+		'input[type=checkbox]': IcbiaControl.extend({
+			controlName: 'checkbox',
+			defaultOptions: $.extend({}, IcbiaControl.prototype.defaultOptions, {
+				widgetTemplate: function () {
+					return $(' ' +
+						'<span>                                                          ' +
+						'    <span class="icbiacheckbox-checked-icon"></span>            ' +
+						'    <span class="icbiacheckbox-unchecked-icon"></span>            ' +
+						'</span>                                                         '
+						);
+				}
+			}),
+			updateWidget: function () {
+				var isChecked = this.$el.is(':checked');
+				this.wrapper
+					.addClass(isChecked ? 'checked' : 'unchecked')
+					.removeClass(isChecked ? 'unchecked' : 'checked');
+				this.updateHitArea();
+			}
 		})
 	};
 
