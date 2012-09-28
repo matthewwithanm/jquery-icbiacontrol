@@ -147,7 +147,7 @@
 			controlName: 'radio',
 			initialize: function ($el, options) {
 				IcbiaControl.prototype.initialize.call(this, $el, options);
-				$('input[name=' + this.$el.attr('name') + ']').not(this.$el)
+				$('input[name="' + this.$el.attr('name') + '"]').not(this.$el)
 					.change($.proxy(this.changeHandler, this));
 			}
 		})
