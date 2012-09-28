@@ -136,6 +136,22 @@
 					.removeClass(isChecked ? 'unchecked' : 'checked');
 				this.updateHitArea();
 			}
+		}),
+		'input[type=radio]': IcbiaControl.extend({
+			controlName: 'radio',
+			defaultOptions: $.extend({}, IcbiaControl.prototype.defaultOptions, {
+				widgetTemplate: function () {
+					return $('<span><i></i></span>');
+				}
+			}),
+			updateWidget: function () {
+				var isChecked = this.$el.is(':checked'),
+					siblings = this.$el.attr('name'); // potentially going to use this to target sibling buttons for update
+				this.wrapper
+					.addClass(isChecked ? 'checked' : 'unchecked')
+					.removeClass(isChecked ? 'unchecked' : 'checked');
+				this.updateHitArea();
+			}
 		})
 	};
 
