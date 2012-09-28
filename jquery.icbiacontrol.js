@@ -136,6 +136,26 @@
 					.removeClass(isChecked ? 'unchecked' : 'checked');
 				this.updateHitArea();
 			}
+		}),
+		'input[type=radio]': IcbiaControl.extend({
+			controlName: 'radio',
+			defaultOptions: $.extend({}, IcbiaControl.prototype.defaultOptions, {
+				widgetTemplate: function () {
+					return $('<span><i></i></span>');
+				}
+			}),
+			updateWidget: function () {
+				var isChecked = this.$el.is(':checked');
+				this.wrapper
+					.addClass(isChecked ? 'checked' : 'unchecked')
+					.removeClass(isChecked ? 'unchecked' : 'checked');
+				this.updateHitArea();
+			},
+			initialize: function ($el, options) {
+				IcbiaControl.prototype.initialize.call(this, $el, options);
+				$('input[name=' + this.$el.attr('name') + ']').not(this.$el)
+					.change($.proxy(this.changeHandler, this));
+			},
 		})
 	};
 
