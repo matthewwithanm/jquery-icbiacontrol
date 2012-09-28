@@ -151,7 +151,12 @@
 					.addClass(isChecked ? 'checked' : 'unchecked')
 					.removeClass(isChecked ? 'unchecked' : 'checked');
 				this.updateHitArea();
-			}
+			},
+			initialize: function ($el, options) {
+				IcbiaControl.prototype.initialize.call(this, $el, options);
+				$('input[name=' + this.$el.attr('name') + ']').not(this.$el)
+					.change($.proxy(this.changeHandler, this));
+			},
 		})
 	};
 
