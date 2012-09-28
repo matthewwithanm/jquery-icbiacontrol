@@ -145,8 +145,7 @@
 				}
 			}),
 			updateWidget: function () {
-				var isChecked = this.$el.is(':checked'),
-					siblings = this.$el.attr('name'); // potentially going to use this to target sibling buttons for update
+				var isChecked = this.$el.is(':checked');
 				this.wrapper
 					.addClass(isChecked ? 'checked' : 'unchecked')
 					.removeClass(isChecked ? 'unchecked' : 'checked');
