@@ -86,12 +86,13 @@ Note: If providing a custom widget template, make sure it includes an element
 with the class "icbiaselect-display". The plugin will use this to show the
 selected label.
 
-### checkbox
+### checkbox & radio
 
 #### Default Widget Template
 
 ```html
 <span class="icbiacontrol-widget icbiacheckbox-widget"><i></i></span>
+<span class="icbiacontrol-widget icbiaradio-widget"><i></i></span>
 ```
 
 The classes "checked" and "unchecked" will be added to the container (the
