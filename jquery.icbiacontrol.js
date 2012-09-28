@@ -2,7 +2,7 @@
 (function ($, window, document) {
 	'use strict';
 
-	var IcbiaControl, controlMap;
+	var IcbiaControl, AbstractCheckedControl, controlMap;
 
 	IcbiaControl = function () {};
 
@@ -102,6 +102,23 @@
 	};
 
 
+	// A base control for checkboxes and radio buttons.
+	AbstractCheckedControl = IcbiaControl.extend({
+		defaultOptions: $.extend({}, IcbiaControl.prototype.defaultOptions, {
+			widgetTemplate: function () {
+				return $('<span><i></i></span>');
+			}
+		}),
+		updateWidget: function () {
+			var isChecked = this.$el.is(':checked');
+			this.wrapper
+				.addClass(isChecked ? 'checked' : 'unchecked')
+				.removeClass(isChecked ? 'unchecked' : 'checked');
+			this.updateHitArea();
+		}
+	});
+
+
 	controlMap = {
 		'select': IcbiaControl.extend({
 			controlName: 'select',
@@ -123,40 +140,16 @@
 				this.updateHitArea();
 			}
 		}),
-		'input[type=checkbox]': IcbiaControl.extend({
-			controlName: 'checkbox',
-			defaultOptions: $.extend({}, IcbiaControl.prototype.defaultOptions, {
-				widgetTemplate: function () {
-					return $('<span><i></i></span>');
-				}
-			}),
-			updateWidget: function () {
-				var isChecked = this.$el.is(':checked');
-				this.wrapper
-					.addClass(isChecked ? 'checked' : 'unchecked')
-					.removeClass(isChecked ? 'unchecked' : 'checked');
-				this.updateHitArea();
-			}
+		'input[type=checkbox]': AbstractCheckedControl.extend({
+			controlName: 'checkbox'
 		}),
-		'input[type=radio]': IcbiaControl.extend({
+		'input[type=radio]': AbstractCheckedControl.extend({
 			controlName: 'radio',
-			defaultOptions: $.extend({}, IcbiaControl.prototype.defaultOptions, {
-				widgetTemplate: function () {
-					return $('<span><i></i></span>');
-				}
-			}),
-			updateWidget: function () {
-				var isChecked = this.$el.is(':checked');
-				this.wrapper
-					.addClass(isChecked ? 'checked' : 'unchecked')
-					.removeClass(isChecked ? 'unchecked' : 'checked');
-				this.updateHitArea();
-			},
 			initialize: function ($el, options) {
 				IcbiaControl.prototype.initialize.call(this, $el, options);
 				$('input[name=' + this.$el.attr('name') + ']').not(this.$el)
 					.change($.proxy(this.changeHandler, this));
-			},
+			}
 		})
 	};
 
