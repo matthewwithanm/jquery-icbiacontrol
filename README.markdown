@@ -18,6 +18,7 @@ Currently, jquery-icbiacontrol works with the following elements:
 
 * select
 * input[type=checkbox]
+* input[type=radio]
 
 
 Usage
