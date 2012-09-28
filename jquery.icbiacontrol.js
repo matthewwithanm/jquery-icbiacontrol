@@ -97,6 +97,7 @@
 		ctor.prototype = new SuperClass();
 		ctor.prototype.constructor = ctor;
 		$.extend(ctor.prototype, attrs);
+		ctor.extend = SuperClass.extend;
 		return ctor;
 	};
 
