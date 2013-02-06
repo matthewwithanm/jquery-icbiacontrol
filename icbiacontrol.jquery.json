@@ -1,0 +1,28 @@
+{
+    "name": "icbiacontrol",
+    "title": "I Can't Believe It's a Control!",
+    "description": "Style native browser controls easily and goodly. Browser controls are wrapped in customizable, styleable HTML, and the original behavior is retained.",
+    "keywords": [
+        "components",
+        "native"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "Matthew Tretter",
+        "email": "m@tthewwithanm.com",
+        "url": "http://matthewwithanm.com"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/matthewwithanm/jquery-icbiacontrol/blob/master/LICENSE"
+        }
+    ],
+    "bugs": "https://github.com/matthewwithanm/jquery-icbiacontrol/issues",
+    "homepage": "https://github.com/matthewwithanm/jquery-icbiacontrol",
+    "docs": "https://github.com/matthewwithanm/jquery-icbiacontrol",
+    "download": "https://github.com/matthewwithanm/jquery-icbiacontrol/archive/master.zip",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
