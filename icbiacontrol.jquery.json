@@ -4,7 +4,9 @@
     "description": "Style native browser controls easily and goodly. Browser controls are wrapped in customizable, styleable HTML, and the original behavior is retained.",
     "keywords": [
         "components",
-        "native"
+        "native",
+        "form",
+        "ui"
     ],
     "version": "1.0.0",
     "author": {
