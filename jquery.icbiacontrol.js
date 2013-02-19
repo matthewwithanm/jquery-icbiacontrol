@@ -124,14 +124,14 @@
 			controlName: 'select',
 			defaultOptions: $.extend({}, IcbiaControl.prototype.defaultOptions, {
 				widgetTemplate: function () {
-					return $(' ' +
+					var template =
 							'<span>                                                        ' +
 							'    <span class="icbiaselect-display-wrapper">                ' +
 							'        <span class="icbiaselect-display"></span>             ' +
 							'    </span>                                                   ' +
 							'    <span class="icbiaselect-arrow"><i></i></span>            ' +
-							'</span>                                                       '
-						);
+							'</span>                                                       ';
+					return $(template);
 				}
 			}),
 			updateWidget: function () {
