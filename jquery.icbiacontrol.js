@@ -16,7 +16,6 @@
                 .focus($.proxy(this.focusHandler, this))
                 .blur($.proxy(this.blurHandler, this));
             this.wrap();
-            this.updateHitArea();
             this.updateWidget();
         },
 
@@ -33,14 +32,6 @@
         },
 
         updateWidget: $.noop,
-
-        updateHitArea: function () {
-            this.$el
-                .css({
-                    width: this.widget.width(),
-                    height: this.widget.height()
-                });
-        },
 
         getHtmlOptions: function () {
             var self = this,
@@ -80,6 +71,8 @@
                     .append(
                         this.$el.css({
                             position: 'absolute',
+                            width: '100%',
+                            height: '100%',
                             border: '1px solid #fff',  // To force the dimensions to take effect.
                             top: 0,
                             left: 0,
@@ -114,7 +107,6 @@
             this.wrapper
                 .addClass(isChecked ? 'checked' : 'unchecked')
                 .removeClass(isChecked ? 'unchecked' : 'checked');
-            this.updateHitArea();
         }
     });
 
@@ -137,7 +129,6 @@
             updateWidget: function () {
                 var label = this.$el.find('option:selected').html();
                 this.widget.find('.icbiaselect-display').html(label || '&nbsp;');
-                this.updateHitArea();
             }
         }),
         'input[type=checkbox]': AbstractCheckedControl.extend({
