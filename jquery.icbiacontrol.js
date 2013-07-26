@@ -58,10 +58,12 @@
         },
 
         wrap: function () {
+            var wrapperClass = this.options.wrapperClass;
             if (!this.wrapper) {
                 this.widget = this.createWidget();
                 this.wrapper = $('<span class="icbiacontrol"></span>')
                     .addClass('icbia' + this.controlName)
+                    .addClass($.isFunction(wrapperClass) ? wrapperClass(this.$el[0]) : wrapperClass || '')
                     .css({
                         position: 'relative',
                         display: 'inline-block'
