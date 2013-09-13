@@ -2,7 +2,7 @@ title:            I Can't Believe It's a Control
 description:      Style browser controls without losing their native behaviors
 disqus_shortname: 
 #Comment out url when working locally to resolve base urls correctly
-url:              http://matthewwithanm.github.io/jquery-icbiacontrol/
+url:              http://aebsr.github.io/jquery-icbiacontrol/
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:   
