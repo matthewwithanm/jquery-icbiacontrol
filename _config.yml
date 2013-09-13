@@ -1,8 +1,6 @@
-title:            I Can't Believe It's a Control
-description:      Style browser controls without losing their native behaviors
-disqus_shortname: 
-#Comment out url when working locally to resolve base urls correctly
-url:              http://aebsr.github.io/jquery-icbiacontrol/
+title: I Can't Believe It's a Control
+description: Style browser controls without losing their native behaviors
+url: http://aebsr.github.io/jquery-icbiacontrol/
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:   
@@ -27,12 +25,6 @@ timezone:    America/New_York
 future:      true
 pygments:    true
 markdown:    kramdown
-
-# https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title
-
-# Amount of post to show on home page
-paginate: 5
 
 kramdown:
   auto_ids: true
