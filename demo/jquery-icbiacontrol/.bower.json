@@ -1,0 +1,37 @@
+{
+  "name": "jquery-icbiacontrol",
+  "version": "1.3.0",
+  "homepage": "https://github.com/matthewwithanm/jquery-icbiacontrol",
+  "authors": [
+    "Matthew Tretter <m@tthewwithanm.com>"
+  ],
+  "description": "Style native browser controls easily and goodly. Browser controls are wrapped in customizable, styleable HTML, and the original behavior is retained.",
+  "main": "jquery.icbiacontrol.js",
+  "keywords": [
+    "components",
+    "native",
+    "form",
+    "ui"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": ">=1.5"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "icbiacontrol.jquery.json"
+  ],
+  "_release": "1.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.3.0",
+    "commit": "2c4e83cf02094abf1445b5816b69e895902deb7a"
+  },
+  "_source": "git://github.com/matthewwithanm/jquery-icbiacontrol.git",
+  "_target": "~1.x",
+  "_originalSource": "jquery-icbiacontrol"
+}
