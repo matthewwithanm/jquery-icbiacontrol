@@ -129,8 +129,10 @@
                 }
             }),
             updateWidget: function () {
-                var label = this.$el.find('option:selected').html();
+                var value = this.$el.val(),
+                    label = this.$el.find('option:selected').html();
                 this.widget.find('.icbiaselect-display').html(label || '&nbsp;');
+                this.wrapper.attr('data-value', value);
             }
         }),
         'input[type=checkbox]': AbstractCheckedControl.extend({
