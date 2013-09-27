@@ -4,6 +4,8 @@ I Can't Believe It's a Control!
 jquery-icbiacontrol is a jQuery plugin that helps you style native browser
 controls, but not really.
 
+**See [the plugin page][1] for the demo.**
+
 It works by adding custom, styleable markup to the DOM right next to the
 original control, which is then made transparent and positioned on top of your
 custom widget. That way, when you interact with the styled widget, you're
@@ -19,6 +21,8 @@ Currently, jquery-icbiacontrol works with the following elements:
 * select
 * input[type=checkbox]
 * input[type=radio]
+
+[1]: http://matthewwithanm.github.io/jquery-icbiacontrol/
 
 
 Usage
