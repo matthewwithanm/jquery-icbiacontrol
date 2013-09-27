@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    {% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
+
+    <link rel="stylesheet" href="normalize-css/normalize.css" />
+    <link rel="stylesheet" href="site.css" />
+    <link rel="stylesheet" href="theme.css" />
+
+    <meta http-equiv="cleartype" content="on">
+    <script src="modernizr/modernizr.js"></script>
+  </head>
+  <body>
+
+    <header>
+      <img src="logo.png"/>
+
+      <nav>
+        <ul>
+          <li><a href="#i-cant-believe-its-a-control">About</a></li>
+          <li><a href="#demo">Demo</a></li>
+          <li><a href="#html">HTML</a></li>
+          <li><a href="#css">CSS</a></li>
+          <li><a href="#usage">Usage</a></li>
+          <li><a href="#options">Options</a></li>
+          <li><a href="#supported-controls">Supported Controls</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      {{ content }}
+    </main>
+
+    <footer>
+      Plugin is written and maintained by <a href="https://github.com/matthewwithanm/">matthewwithanm</a>
+      <br />
+      Website and logo smashed together by <a href="http://aeb.sr">aebsr</a>
+    </footer>
+    
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery-icbiacontrol/jquery.icbiacontrol.js"></script>
+    <script>
+      $('select, [type="radio"], [type="checkbox"]').icbiaControl();
+    </script>
+  </body>
+</html>

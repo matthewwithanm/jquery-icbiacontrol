@@ -1,6 +1,6 @@
 {
   "name": "jquery-icbiacontrol",
-  "version": "0.0.1",
+  "version": "1.0.",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -9,7 +9,9 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.x",
-    "jquery-icbiacontrol": "~1.x"
+    "jquery": "~1.x",
+    "jquery-icbiacontrol": "~1.x",
+    "modernizr": "~2.6.2",
+    "normalize-css": "~2.1.3"
   }
 }

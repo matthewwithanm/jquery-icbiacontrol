@@ -2,27 +2,6 @@ title: I Can't Believe It's a Control
 description: Style browser controls without losing their native behaviors
 url: http://matthewwithanm.github.io/jquery-icbiacontrol
 
-# Analytics and webmaster tools stuff goes here
-google_analytics:   
-google_verify:      
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
-
-# Links to include in top navigation
-# For external links add external: true
-links:
-  - title: Demo
-    url: /demo/
-  - title: Fork Me
-    url: https://github.com/matthewwithanm/jquery-icbiacontrol
-    external: true
-  - title: Issues
-    url: https://github.com/matthewwithanm/jquery-icbiacontrol/issues
-    external: true
-
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
-future:      true
 pygments:    true
 markdown:    kramdown
 

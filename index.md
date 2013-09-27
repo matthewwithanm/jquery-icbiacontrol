@@ -1,14 +1,7 @@
 ---
-layout: page
-permalink: /
-title: jQuery-icbiacontrol
-tags: [jquery, css, plugin]
-image:
-  feature: butter.jpg
-  credit: Siona Karen
-  creditlink: http://www.flickr.com/photos/26149290@N02/3871517484/in/photolist-6U7xgs-6UftE7-6X87WP-71rojm-77Mk4e-77MkzB-77Rff1-77RfoN-7e8yew-7nisgv-7ysenx-ado18v-b1hNFn-bVLU9d-aVcbRR-87dQAy-f9teSB-8aeYRG-9ndSA7-bc5UpX-bBZy1N-8kPnfB-8kPnjp-8kSyiY-a9CU8j-94fJLD-7MTJxB-7RpMSt-bBR8iG-avDHdg-7ZyHNZ-7ZBUaE-7ZyHVp-7ZyHzF-7ZyHtH-coNL47-9PXGBT-9SDCQV-a9CTTU-8vdrvw-dYsPor-bFePRM-bFePPi-bFeP9V-bsjWdU-aXnUNg-ac58oJ-ej2w51-dY1dmh-7V8mqm-8xrwuJ
-share: true
+layout: default
 ---
+
 I Can't Believe It's a Control!
 ==============================
 
@@ -30,6 +23,138 @@ Currently, jquery-icbiacontrol works with the following elements:
 * select
 * input[type=checkbox]
 * input[type=radio]
+
+## Demo
+
+<form>
+  <fieldset>
+    <legend>Minimal Theme</legend>
+
+    <label for="select">Select</label>
+    <select name="select" id="select">
+      <option disabled selected>Select One</option>
+      <option value="option">This is an option</option>
+      <option value="another">And another option</option>
+    </select>
+
+    <hr />
+
+    <label for="radio1">One</label>
+    <input type="radio" id="radio1" name="radio" value="1" />
+    <label for="radio2">Two</label>
+    <input type="radio" id="radio2" name="radio" value="2" />
+    <hr />
+
+    <label for="checkbox">Agree</label>
+    <input type="checkbox" id="checkbox" name="checkbox" />
+  </fieldset>
+</form>
+
+<a href="https://github.com/matthewwithanm/jquery-icbiacontrol/"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+## HTML
+This minimal [HTML Example](demo-src.html) showcases how to get up and running quickly.
+{% highlight html linenos %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jquery-icbiacontrol demo</title>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Minimal Theme</legend>
+
+        <label for="select">Select</label>
+        <select name="select" id="select">
+          <option disabled selected>Select One</option>
+          <option value="option">This is an option</option>
+          <option value="another">And another option</option>
+        </select>
+
+        <hr />
+
+        <label for="radio1">One</label>
+        <input type="radio" id="radio1" name="radio" value="1" />
+        <label for="radio2">Two</label>
+        <input type="radio" id="radio2" name="radio" value="2" />
+        <hr />
+
+        <label for="checkbox">Agree</label>
+        <input type="checkbox" id="checkbox" name="checkbox" />
+      </fieldset>
+    </form>
+    <link rel="stylesheet" type="text/css" href="theme.css" />
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery-icbiacontrol/jquery.icbiacontrol.js"></script>
+    <script>
+      $('select, [type="radio"], [type="checkbox"]').icbiaControl();
+    </script>
+  </body>
+</html>
+{% endhighlight %}
+
+### CSS
+Checkout our minimal example [theme.css](theme.css). This css file makes use of the [icbiacontrol-base.css](icbiacontrol-base.css) which is a base css file providing just enough styling to make the elements visible in the browser. But lack (in)active states.
+
+{% highlight css linenos %}
+@import 'icbiacontrol-base.css';
+
+/* Minimal Theme */
+.icbiacontrol {
+  border: 4px solid #f5f5f5;
+  background: #fff;
+  font-size: .85em;
+  color: #999;
+}
+.icbiacontrol:focus,
+.icbiacontrol.focus {
+  border-color: #d0d0d0;
+}
+.icbiacontrol i {
+  color: #05a7a9;
+}
+
+/* Checkboxes and Radios */
+.icbiaradio,
+.icbiacheckbox {
+  width: 28px;
+  height: 28px;
+}
+
+/* Selected Checkboxes and Radios */
+.icbiaradio.checked i:after {
+  content: '\25C9';
+}
+.icbiacheckbox.checked i:after {
+  content: '\2713';
+  font-size: 1.4em;
+  line-height: 1;
+}
+
+/* Selectboxes */
+.icbiaselect {
+  width: 300px;
+  height: 38px;
+  background: white;
+  line-height: 20px;
+}
+.icbiaselect-display-wrapper {
+  padding-right: 30px;
+  padding: 6px 0 6px 6px;
+}
+.icbiaselect-arrow {
+  width: 30px;
+  height: 30px;
+  background-color: #f7f7f7;
+  border: 1px solid #cccfd8;
+}
+.icbiaselect-arrow i:after {
+  content: '\25BE';
+  line-height: 28px;
+  font-size: 1.2em;
+}
+{% endhighlight %}
 
 
 Usage
@@ -64,7 +189,7 @@ used to find a template in the document. The classes "icbiacontrol-widget" and
 
 #### Example
 
-{% highlight html linenos %}
+{% highlight text linenos %}
 <script id="icbiaselect-template" type="text/html">
     <div>
         <div class="icbiaselect-display"></div>
