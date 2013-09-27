@@ -1,0 +1,60 @@
+@import 'icbiacontrol-base.css';
+
+/* Minimal Theme */
+.icbiacontrol {
+	border: 4px solid #dfdfdf;
+	background: #fff;
+	font-size: .85em;
+	color: #999;
+}
+.icbiacontrol:focus,
+.icbiacontrol.focus {
+	border-color: #bfbfbf;
+}
+
+/* Checkboxes and Radios */
+.icbiaradio,
+.icbiacheckbox {
+	width: 28px;
+	height: 28px;
+}
+
+/* Selected Checkboxes and Radios */
+.icbiaradio.checked i:after {
+	background-color: rgb(29,75,155);
+	display: block;
+	width: 10px;
+	height: 10px;
+	content: '';
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+.icbiacheckbox.checked i:after {
+	content: '\2713';
+	font-size: 1.4em;
+	color: rgb(29,75,155);
+}
+
+/* Selectboxes */
+.icbiaselect {
+	width: 300px;
+	height: 38px;
+	background: white;
+	line-height: 20px;
+}
+.icbiaselect-display-wrapper {
+	padding-right: 30px;
+	padding: 6px 0 6px 6px;
+}
+.icbiaselect-arrow {
+	width: 30px;
+	height: 30px;
+	background-color: #f7f7f7;
+	border: 1px solid #cccfd8;
+}
+.icbiaselect-arrow i:after {
+	content: '\25BE';
+	line-height: 28px;
+	font-size: 1.2em;
+}
