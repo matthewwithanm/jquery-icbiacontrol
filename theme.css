@@ -33,6 +33,7 @@
 .icbiacheckbox.checked i:after {
 	content: '\2713';
 	font-size: 1.4em;
+	line-height: 20px;
 	color: rgb(29,75,155);
 }
 
