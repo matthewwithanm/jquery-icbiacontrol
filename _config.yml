@@ -2,12 +2,6 @@ title: I Can't Believe It's a Control
 description: Style browser controls without losing their native behaviors
 url: http://matthewwithanm.github.io/jquery-icbiacontrol
 
-# Analytics and webmaster tools stuff goes here
-google_analytics:   
-google_verify:      
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
-
 pygments:    true
 markdown:    kramdown
 
