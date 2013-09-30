@@ -77,6 +77,12 @@ a[href="https://github.com/matthewwithanm/jquery-icbiacontrol/"] img {
 }
 
 @media (max-width: 54em) {
+	a[href="https://github.com/matthewwithanm/jquery-icbiacontrol/"] img {
+		max-width: 30%;
+	}
+}
+
+@media (max-width: 54em) {
 	body {
 		padding: 0;
 	}
