@@ -77,6 +77,12 @@ a[href="https://github.com/matthewwithanm/jquery-icbiacontrol/"] img {
 }
 
 @media (max-width: 54em) {
+	a[href="https://github.com/matthewwithanm/jquery-icbiacontrol/"] img {
+		max-width: 30%;
+	}
+}
+
+@media (max-width: 54em) {
 	body {
 		padding: 0;
 	}
@@ -92,13 +98,14 @@ a[href="https://github.com/matthewwithanm/jquery-icbiacontrol/"] img {
 	}
 
 	main h1:first-of-type {
-		width: 290px;
-		height: 144px;
+		width: 203px;
+		height: 100px;
 		text-indent: 100%;
 		white-space: nowrap;
 		overflow: hidden;
 		margin: 0 auto;
 		background: url(logo.png);
+		background-size: 100%;
 	}
 
 	header {
