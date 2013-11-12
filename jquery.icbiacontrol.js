@@ -164,7 +164,7 @@
                 // HTML5 is protecting everyone involved in the file transaction
                 // let's prune the fakepath for readibilities sake
                 var value = this.$el.val().replace("C:\\fakepath\\", ""),
-                    label = 'No File Chosen',
+                    label = 'No file chosen',
                     isSelected = this.$el.val();
                 this.wrapper
                     .toggleClass('selected', isSelected)
