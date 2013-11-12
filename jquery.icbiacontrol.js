@@ -155,7 +155,7 @@
                             '    <span class="icbiafile-display-wrapper">                  ' +
                             '        <span class="icbiafile-display"></span>               ' +
                             '    </span>                                                   ' +
-                            '    <span class="icbiafile-submit"><i></i></span>             ' +
+                            '    <span class="icbiafile-upload-button"><i></i></span>      ' +
                             '</span>                                                       ';
                     return $(template);
                 }
