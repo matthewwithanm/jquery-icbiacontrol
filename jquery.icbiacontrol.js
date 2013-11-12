@@ -2,7 +2,7 @@
 (function ($, window, document) {
     'use strict';
 
-    var IcbiaControl, AbstractCheckedControl, FileUploadControl, controlMap;
+    var IcbiaControl, AbstractCheckedControl, controlMap;
 
     IcbiaControl = function () {};
 
@@ -112,29 +112,6 @@
         }
     });
 
-    // A base control for file upload inputs
-    FileUploadControl = IcbiaControl.extend({
-        defaultOptions: $.extend({}, IcbiaControl.prototype.defaultOptions, {
-            widgetTemplate: function () {
-                return $('<span><i></i></span>');
-            }
-        }),
-        updateWidget: function () {
-            // HTML5 is protecting everyone involved in the file transaction
-            // let's prune the fakepath for readibilities sake
-            var value = this.$el.val().replace("C:\\fakepath\\", ""),
-                label = 'No File Chosen',
-                isSelected = this.$el.val();
-            this.wrapper
-                .addClass(isSelected ? 'selected' : 'empty')
-                .removeClass(isSelected ? 'empty' : 'selected');
-            if (this.$el.attr('placeholder')) {
-                label = this.$el.attr('placeholder');
-            }
-            this.widget.find('.icbiafile-display').html(value || label);
-        }
-    });
-
 
     controlMap = {
         'select': IcbiaControl.extend({
@@ -169,7 +146,7 @@
                     .change($.proxy(this.changeHandler, this));
             }
         }),
-        'input[type=file]': FileUploadControl.extend({
+        'input[type=file]': IcbiaControl.extend({
             controlName: 'file',
             defaultOptions: $.extend({}, IcbiaControl.prototype.defaultOptions, {
                 widgetTemplate: function () {
@@ -182,7 +159,21 @@
                             '</span>                                                       ';
                     return $(template);
                 }
-            })
+            }),
+            updateWidget: function () {
+                // HTML5 is protecting everyone involved in the file transaction
+                // let's prune the fakepath for readibilities sake
+                var value = this.$el.val().replace("C:\\fakepath\\", ""),
+                    label = 'No File Chosen',
+                    isSelected = this.$el.val();
+                this.wrapper
+                    .addClass(isSelected ? 'selected' : 'empty')
+                    .removeClass(isSelected ? 'empty' : 'selected');
+                if (this.$el.attr('placeholder')) {
+                    label = this.$el.attr('placeholder');
+                }
+                this.widget.find('.icbiafile-display').html(value || label);
+            }
         })
     };
 
