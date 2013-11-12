@@ -21,6 +21,7 @@ Currently, jquery-icbiacontrol works with the following elements:
 * select
 * input[type=checkbox]
 * input[type=radio]
+* input[type=file]
 
 [1]: http://matthewwithanm.github.io/jquery-icbiacontrol/
 
@@ -103,3 +104,20 @@ selected label.
 The classes "checked" and "unchecked" will be added to the container (the
 element with the "icbiacheckbox" class) to inidicate the current state of the
 control.
+
+### file upload
+
+#### Default Widget Template
+
+```html
+<span>
+    <span class="icbiafile-display-wrapper">
+        <span class="icbiafile-display"></span>
+    </span>
+    <span class="icbiafile-submit"><i></i></span>
+</span>
+```
+
+Note: If providing a custom widget template, make sure it includes an element with the class "icbiafile-display". The plugin will use this to show the selected file name.
+
+The classes "empty" and "selected" will be added to the container, (the element with the "icbiafile" class).

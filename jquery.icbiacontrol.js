@@ -2,7 +2,7 @@
 (function ($, window, document) {
     'use strict';
 
-    var IcbiaControl, AbstractCheckedControl, controlMap;
+    var IcbiaControl, AbstractCheckedControl, FileUploadControl, controlMap;
 
     IcbiaControl = function () {};
 
@@ -112,6 +112,29 @@
         }
     });
 
+    // A base control for file upload inputs
+    FileUploadControl = IcbiaControl.extend({
+        defaultOptions: $.extend({}, IcbiaControl.prototype.defaultOptions, {
+            widgetTemplate: function () {
+                return $('<span><i></i></span>');
+            }
+        }),
+        updateWidget: function () {
+            // HTML5 is protecting everyone involved in the file transaction
+            // let's prune the fakepath for readibilities sake
+            var value = this.$el.val().replace("C:\\fakepath\\", ""),
+                label = 'No File Chosen',
+                isSelected = this.$el.val();
+            this.wrapper
+                .addClass(isSelected ? 'selected' : 'empty')
+                .removeClass(isSelected ? 'empty' : 'selected');
+            if (this.$el.attr('placeholder')) {
+                label = this.$el.attr('placeholder');
+            }
+            this.widget.find('.icbiafile-display').html(value || label);
+        }
+    });
+
 
     controlMap = {
         'select': IcbiaControl.extend({
@@ -145,6 +168,21 @@
                 $('input[name="' + this.$el.attr('name') + '"]').not(this.$el)
                     .change($.proxy(this.changeHandler, this));
             }
+        }),
+        'input[type=file]': FileUploadControl.extend({
+            controlName: 'file',
+            defaultOptions: $.extend({}, IcbiaControl.prototype.defaultOptions, {
+                widgetTemplate: function () {
+                    var template =
+                            '<span>                                                        ' +
+                            '    <span class="icbiafile-display-wrapper">                  ' +
+                            '        <span class="icbiafile-display"></span>               ' +
+                            '    </span>                                                   ' +
+                            '    <span class="icbiafile-submit"><i></i></span>             ' +
+                            '</span>                                                       ';
+                    return $(template);
+                }
+            })
         })
     };
 
