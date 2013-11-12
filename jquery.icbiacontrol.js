@@ -107,8 +107,8 @@
         updateWidget: function () {
             var isChecked = this.$el.is(':checked');
             this.wrapper
-                .addClass(isChecked ? 'checked' : 'unchecked')
-                .removeClass(isChecked ? 'unchecked' : 'checked');
+                .toggleClass('checked', isChecked)
+                .toggleClass('unchecked', !isChecked);
         }
     });
 
@@ -167,8 +167,8 @@
                     label = 'No File Chosen',
                     isSelected = this.$el.val();
                 this.wrapper
-                    .addClass(isSelected ? 'selected' : 'empty')
-                    .removeClass(isSelected ? 'empty' : 'selected');
+                    .toggleClass('selected', isSelected)
+                    .toggleClass('empty', !isSelected);
                 if (this.$el.attr('placeholder')) {
                     label = this.$el.attr('placeholder');
                 }
