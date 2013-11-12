@@ -208,9 +208,9 @@
 
                 if (!plugin) {
                     if (method) {
-                        $.error('You can\'t call the icbiaControl method "' + method
-                                + '" without first initializing the plugin by calling '
-                                + 'icbiaControl() on the jQuery object.');
+                        $.error('You can\'t call the icbiaControl method "' + method +
+                                '" without first initializing the plugin by calling ' +
+                                'icbiaControl() on the jQuery object.');
                     } else {
                         plugin = createIcbiaControl($el, options);
                         $el.data('icbiaControl', plugin);
