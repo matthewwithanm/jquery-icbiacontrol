@@ -47,7 +47,8 @@ Options
 Options can be passed either in an object when you initialize the plugin, or by
 setting prefixed data-* attributes on the select box you're replacing. (For
 example, if you want to set the option "widgetTemplate", you would use the
-attribute "data-icbiacontrol-widgetTemplate".)
+attribute "data-icbiacontrol-widgetTemplate". "data-widgetTemplate" and
+"data-widgettemplate" are also valid.)
 
 ### widgetTemplate
 

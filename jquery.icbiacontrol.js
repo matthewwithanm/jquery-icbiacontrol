@@ -7,7 +7,7 @@
     IcbiaControl = function () {};
 
     IcbiaControl.prototype = {
-        optionAttributePrefix: 'data-icbiacontrol-',
+        optionAttributePrefixes: ['data-', 'data-icbiacontrol-'],
         initialize: function ($el, options) {
             this.$el = $el;
             this.options = $.extend(this.defaultOptions, this.getHtmlOptions(), options);
@@ -34,17 +34,31 @@
         updateWidget: $.noop,
 
         getHtmlOptions: function () {
-            var self = this,
-                opts = {};
+            var unprefixed, optName,
+                self = this,
+                opts = {},
+                optionMap = {};
+
+            $.each(self.defaultOptions, function (name) {
+                optionMap[name.toLowerCase()] = name;
+            });
+
             $.each(this.$el[0].attributes, function (i, attr) {
-                if (attr.name.indexOf(self.optionAttributePrefix) !== -1) {
-                    opts[attr.name.substr(self.optionAttributePrefix.length)] = attr.value;
-                }
+                $.each(self.optionAttributePrefixes, function (i, prefix) {
+                    if (attr.name.indexOf(prefix) === 0) {
+                        unprefixed = attr.name.substr(prefix.length);
+                        optName = optionMap[unprefixed.toLowerCase()];
+                        if (optName) {
+                            opts[optName] = attr.value;
+                        }
+                    }
+                });
             });
             return opts;
         },
 
         defaultOptions: {
+            wrapperClass: null
         },
 
         createWidget: function () {
@@ -52,7 +66,6 @@
                 widget = typeof wt === 'function' ? wt() : $($(wt).html());
 
             return widget
-                .removeAttr(this.optionAttributePrefix + 'widgetTemplate')
                 .addClass('icbiacontrol-widget')
                 .addClass('icbia' + this.controlName + '-widget');
         },
