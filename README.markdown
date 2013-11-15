@@ -134,4 +134,3 @@ Both the input's default text and button text can be changed using 'data-' attri
 |--------------------|-----------------|----------------|
 | Default/Empty Text | data-emptyText  | No File Chosen |
 | Upload Button Text | data-buttonText | Choose File(s) |
-|--------------------|-----------------|----------------|
