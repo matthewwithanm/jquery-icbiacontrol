@@ -58,7 +58,9 @@
         },
 
         defaultOptions: {
-            wrapperClass: null
+            wrapperClass: null,
+            emptyText: null,
+            buttonText: null
         },
 
         createWidget: function () {
@@ -168,7 +170,10 @@
                             '    <span class="icbiafile-display-wrapper">                  ' +
                             '        <span class="icbiafile-display"></span>               ' +
                             '    </span>                                                   ' +
-                            '    <span class="icbiafile-upload-button"><i></i></span>      ' +
+                            '    <span class="icbiafile-uploadbutton">                    ' +
+                            '        <i></i>                                               ' +
+                            '        <span class="icbiafile-buttontext"></span>    ' +
+                            '    </span>                                                   ' +
                             '</span>                                                       ';
                     return $(template);
                 }
@@ -177,15 +182,19 @@
                 // HTML5 is protecting everyone involved in the file transaction
                 // let's prune the fakepath for readibilities sake
                 var value = this.$el.val().replace("C:\\fakepath\\", ""),
-                    label = 'No file chosen',
+                    defaultEmptyText = 'No file chosen',
+                    multiple = this.$el.attr('multiple'),
+                    defaultButtonText = multiple === null || multiple === undefined ? 'Choose File' : 'Choose Files',
                     isSelected = this.$el.val();
                 this.wrapper
                     .toggleClass('selected', isSelected)
                     .toggleClass('empty', !isSelected);
-                if (this.$el.attr('placeholder')) {
-                    label = this.$el.attr('placeholder');
-                }
-                this.widget.find('.icbiafile-display').html(value || label);
+                this.widget
+                    .find('.icbiafile-buttontext')
+                        .html(this.options.buttonText || defaultButtonText)
+                        .end()
+                    .find('.icbiafile-display')
+                        .html(value || this.options.emptyText || defaultEmptyText);
             }
         })
     };
