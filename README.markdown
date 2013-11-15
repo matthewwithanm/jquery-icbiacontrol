@@ -124,4 +124,4 @@ control.
 
 Note: If providing a custom widget template, make sure it includes an element with the class "icbiafile-display". The plugin will use this to show the selected file name.
 
-The classes "empty" and "selected" will be added to the container, (the element with the "icbiafile" class).
+The classes "empty" and "populated" will be added to the container, (the element with the "icbiafile" class).

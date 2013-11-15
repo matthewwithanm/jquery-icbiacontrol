@@ -187,7 +187,7 @@
                     defaultButtonText = multiple === null || multiple === undefined ? 'Choose File' : 'Choose Files',
                     isSelected = this.$el.val();
                 this.wrapper
-                    .toggleClass('selected', isSelected)
+                    .toggleClass('populated', isSelected)
                     .toggleClass('empty', !isSelected);
                 this.widget
                     .find('.icbiafile-buttontext')
