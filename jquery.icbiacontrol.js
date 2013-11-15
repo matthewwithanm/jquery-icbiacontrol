@@ -170,9 +170,9 @@
                             '    <span class="icbiafile-display-wrapper">                  ' +
                             '        <span class="icbiafile-display"></span>               ' +
                             '    </span>                                                   ' +
-                            '    <span class="icbiafile-uploadbutton">                    ' +
+                            '    <span class="icbiafile-uploadbutton">                     ' +
                             '        <i></i>                                               ' +
-                            '        <span class="icbiafile-buttontext"></span>    ' +
+                            '        <span class="icbiafile-buttontext"></span>            ' +
                             '    </span>                                                   ' +
                             '</span>                                                       ';
                     return $(template);
