@@ -115,10 +115,22 @@ control.
     <span class="icbiafile-display-wrapper">
         <span class="icbiafile-display"></span>
     </span>
-    <span class="icbiafile-submit"><i></i></span>
+    <span class="icbiafile-uploadbutton">
+        <i></i>
+        <span class="icbiafile-buttontext"></span>
+    </span>
 </span>
 ```
 
 Note: If providing a custom widget template, make sure it includes an element with the class "icbiafile-display". The plugin will use this to show the selected file name.
 
-The classes "empty" and "selected" will be added to the container, (the element with the "icbiafile" class).
+The classes "empty" and "populated" will be added to the container, (the element with the "icbiafile" class).
+
+#### Customizing Text
+
+Both the input's default text and button text can be changed using 'data-' attributes on the input itself.
+
+|      Element       |    Attribute    |    Default     |
+|--------------------|-----------------|----------------|
+| Default/Empty Text | data-emptyText  | No File Chosen |
+| Upload Button Text | data-buttonText | Choose File(s) |
