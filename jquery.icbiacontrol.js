@@ -145,7 +145,8 @@
             }),
             updateWidget: function () {
                 var value = this.$el.val(),
-                    label = this.$el.find('option:selected').html();
+                    $option = this.$el.find('option:selected'),
+                    label = $option.attr('label') || $option.html();
                 this.widget.find('.icbiaselect-display').html(label || '&nbsp;');
                 this.wrapper.attr('data-value', value);
             }
