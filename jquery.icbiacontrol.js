@@ -110,6 +110,7 @@
                                     left: '',
                                     opacity: ''
                                 });
+                $control.data('icbiaControl', '');
                 $wrapper.replaceWith($control);
             });
         }
