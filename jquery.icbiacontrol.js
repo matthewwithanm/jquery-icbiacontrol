@@ -97,6 +97,21 @@
                         })
                     );
             }
+        },
+        destroy: function() {
+            this.$el.each(function() {
+                var $wrapper = $(this).parents('.icbiacontrol');
+                var $control = $(this).css({
+                                    position: '',
+                                    width: '',
+                                    height: '',
+                                    border: '',
+                                    top: '',
+                                    left: '',
+                                    opacity: ''
+                                });
+                $wrapper.replaceWith($control);
+            });
         }
     };
 
