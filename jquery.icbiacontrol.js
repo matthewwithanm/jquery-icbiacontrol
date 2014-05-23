@@ -11,10 +11,16 @@
         initialize: function ($el, options) {
             this.$el = $el;
             this.options = $.extend(this.defaultOptions, this.getHtmlOptions(), options);
+
+            // Bind the event handlers.
+            this._changeHandler = $.proxy(this.changeHandler, this);
+            this._focusHandler = $.proxy(this.focusHandler, this);
+            this._blurHandler = $.proxy(this.blurHandler, this);
+
             this.$el
-                .change($.proxy(this.changeHandler, this))
-                .focus($.proxy(this.focusHandler, this))
-                .blur($.proxy(this.blurHandler, this));
+                .change(this._changeHandler)
+                .focus(this._focusHandler)
+                .blur(this._blurHandler);
             this.wrap();
             this.updateWidget();
         },
@@ -110,6 +116,9 @@
                     opacity: ''
                 })
                 .data('icbiaControl', '')
+                .off('change', this._changeHandler)
+                .off('focus', this._focusHandler)
+                .off('blur', this._blurHandler)
                 .closest('.icbiacontrol')
                     .replaceWith(this.$el);
         }
@@ -173,8 +182,12 @@
             controlName: 'radio',
             initialize: function ($el, options) {
                 IcbiaControl.prototype.initialize.call(this, $el, options);
-                $('input[name="' + this.$el.attr('name') + '"]').not(this.$el)
-                    .change($.proxy(this.changeHandler, this));
+                this._groupMembers = $('input[name="' + this.$el.attr('name') + '"]').not(this.$el)
+                    .change(this._changeHandler);
+            },
+            destroy: function () {
+                IcbiaControl.prototype.destroy.apply(this, arguments);
+                this._groupMembers.off('change', this._changeHandler);
             }
         }),
         'input[type=file]': IcbiaControl.extend({
